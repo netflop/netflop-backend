@@ -22,13 +22,27 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-web' //{
+//		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+//	}
+	implementation 'com.amazonaws.serverless:aws-serverless-java-container-springboot3:2.0.0-M1'
+	implementation 'com.amazonaws.serverless:aws-serverless-java-container-core:2.0.0-M1'
 	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.mysql:mysql-connector-j'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+
+
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+task packageJar(type: Zip) {
+	into('lib') {
+		from(jar)
+		from(configurations.runtimeClasspath)
+	}
 }
