@@ -23,6 +23,6 @@ jobs:
 
       - name: Deploy to Lambda
         run: |
-          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws configure set aws_access_key_id AKIA6L7LGSUICPIIC242
+          aws configure set aws_secret_access_key RxnZeDnhpTsMOOuIXPMZ6sb1BH8oDnqpQFmOAFav
           aws lambda update-function-code --function-name StreamLambdaHandler --zip-file fileb:./build/libs/your-app.jar
