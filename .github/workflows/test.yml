@@ -4,6 +4,7 @@
         - opened
         - reopened
         - closed  # for merge PR
+        - synchronize
       branches:
         - 'develop'
         - 'master'
