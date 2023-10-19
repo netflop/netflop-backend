@@ -16,6 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Add Reviewers
-      uses: hkusu/review-assign-action@v1
+      uses: kentaro-m/auto-assign-action@v1.2.5
       with:
-        reviewers: thanghuynh2608,truongyennguyen,yoralong,cuongvu209
+        configuration-path: '.github/reviewer_list_config.yml'
