@@ -16,10 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Add Reviewers
-      uses: madrapps/add-reviewers@v1
+      uses: hkusu/review-assign-action@v1
       with:
-        token: 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
         reviewers: thanghuynh2608,truongyennguyen,yoralong,cuongvu209
-        re-request-when-approved: true
-        re-request-when-changes-requested: true
-        debug-mode: true
