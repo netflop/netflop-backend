@@ -32,7 +32,9 @@
             run: gradle task buildZip
 
           - name: List dir
-            run: ls
+            run: |
+              cd build
+              ls
 
           - name: Set up Node
             uses: actions/setup-node@v3
@@ -48,3 +50,5 @@
               cd cdk
               mvn clean install
               cdk synth
+
+
