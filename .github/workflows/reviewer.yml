@@ -18,7 +18,7 @@ jobs:
     - name: Add Reviewers
       uses: madrapps/add-reviewers@v1
       with:
-        token: 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
+        token: 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
         reviewers: thanghuynh2608,truongyennguyen,yoralong,cuongvu209
         re-request-when-approved: true
         re-request-when-changes-requested: true
