@@ -18,4 +18,5 @@ jobs:
     - name: Add Reviewers
       uses: kentaro-m/auto-assign-action@v1.2.5
       with:
+        repo-token: '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'
         configuration-path: '.github/reviewer_list_config.yml'
