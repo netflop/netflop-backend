@@ -4,6 +4,7 @@
         - opened
         - reopened
         - closed  # for merge PR
+        - synchronize
       branches:
         - 'develop'
         - 'master'
@@ -16,4 +17,4 @@
       test:
         runs-on: ubuntu-latest
         steps:
-          - run: echo $(github.event.pull_request_target.base.ref)
+          - run: echo $AWS_REGION
