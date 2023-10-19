@@ -29,7 +29,22 @@
             uses: gradle/gradle-build-action@v2
           
           - name: Execute Gradle build
-            run: gradle build
+            run: gradle build buildZip
 
           - name: List dir
             run: ls
+
+          - name: Set up Node
+            uses: actions/setup-node@v3
+            with:
+              node-version: "18"
+
+          - name: Install CDK
+            run: |
+              npm install -g aws-cdk
+
+          - name: Deploy CDK
+            run: |
+              cd cdk
+              mvn clean install
+              cdk synth
