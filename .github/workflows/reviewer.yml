@@ -1,0 +1,21 @@
+name: Add Reviewers
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - closed  # for merge PR
+      - synchronize
+    branches:
+      - 'develop'
+      - 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Add Reviewers
+      uses: hkusu/review-assign-action@v1
+      with:
+        reviewers: thanghuynh2608,truongyennguyen,yoralong,cuongvu209
