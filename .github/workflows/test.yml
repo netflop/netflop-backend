@@ -11,7 +11,7 @@
     workflow_dispatch:
 
   env:
-    AWS_REGION: ${{ github.event.pull_request_target.base.ref == 'develop' && 'US-east-1' || 'US-east-2' }}
+    AWS_REGION: ${{ github.base_ref == 'develop' && 'US-east-1' || 'US-east-2' }}
 
   jobs:
       test:
