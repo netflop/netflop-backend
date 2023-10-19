@@ -17,4 +17,4 @@
       test:
         runs-on: ubuntu-latest
         steps:
-          - run: echo $AWS_REGION
+          - run: echo $github.event.pull_request_target.base.ref
