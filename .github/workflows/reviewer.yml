@@ -1,0 +1,24 @@
+name: Add Reviewers
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - closed  # for merge PR
+      - synchronize
+    branches:
+      - 'develop'
+      - 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Add Reviewers
+      uses: madrapps/add-reviewers@v1
+      with:
+        token: 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
+        reviewers: thanghuynh2608,truongyennguyen,yoralong,cuongvu209
+        re-request-when-approved: true
+        re-request-when-changes-requested: true
