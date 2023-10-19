@@ -29,7 +29,7 @@
             uses: gradle/gradle-build-action@v2
           
           - name: Execute Gradle build
-            run: gradle build
+            run: gradle task buildZip
 
           - name: List dir
             run: ls
