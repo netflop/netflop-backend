@@ -1,0 +1,19 @@
+  on:
+    pull_request_target:
+      types:
+        - opened
+        - reopened
+        - closed  # for merge PR
+      branches:
+        - 'develop'
+        - 'master'
+    workflow_dispatch:
+
+  env:
+    AWS_REGION: ${{ github.event.pull_request_target.base.ref == 'develop' && 'US-east-1' || 'US-east-2' }}
+
+  jobs:
+      test:
+        runs-on: ubuntu-latest
+        steps:
+          - run: echo $(github.event.pull_request_target.base.ref)
