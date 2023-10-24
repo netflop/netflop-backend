@@ -70,6 +70,9 @@ jobs:
           cd cdk
           mvn clean install
 
+      - name: Print pwd
+        run: pwd
+
       - name: Deploy
         run: |
           cdk synth -c env=$ENVIRONMENT
