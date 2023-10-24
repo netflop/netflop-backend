@@ -20,6 +20,9 @@ jobs:
   deploy-app:
     if: ${{ github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ github.event.repository.name }}
     steps:
       - name: Print ENV
         run: |
