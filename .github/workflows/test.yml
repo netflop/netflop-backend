@@ -68,13 +68,7 @@ jobs:
       - name: Install package for CDK
         run: |
           cd cdk
-          mvn clean install
+          cdk synth -c env=$ENVIRONMENT
 
       - name: Print pwd
         run: pwd
-
-      - name: Deploy
-        run: |
-          cdk synth -c env=$ENVIRONMENT
-#          cdk bootstrap
-#          cdk deploy
