@@ -20,9 +20,6 @@ jobs:
   deploy-app:
     if: ${{ github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${{ github.event.repository.name }}
     steps:
       - name: Print ENV
         run: |
@@ -50,8 +47,8 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
-      - name: Print ls
-        run: ls
+      - name: Print pwd
+        run: pwd
 
       - name: Build project
         run: gradle task buildZip
