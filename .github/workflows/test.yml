@@ -21,6 +21,9 @@ jobs:
     if: ${{ github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v4
+        
       - name: Print ENV
         run: |
           echo 'AWS_REGION:' $AWS_REGION
