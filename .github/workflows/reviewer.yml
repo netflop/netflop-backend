@@ -16,7 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Add Reviewers
-      uses: kentaro-m/auto-assign-action@v1.2.5
+      uses: madrapps/add-reviewers@v1
       with:
-        repo-token: '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'
-        configuration-path: '.github/reviewer_list_config.yml'
+        token: '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'
+        reviewers: thanghuynh2608
+        re-request-when-approved: true
+        re-request-when-changes-requested: true
+        debug-mode: true
